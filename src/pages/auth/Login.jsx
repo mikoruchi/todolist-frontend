@@ -38,65 +38,53 @@ function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-950 flex items-center justify-center px-4">
-      <div className="bg-gray-900 shadow-lg w-5xl grid md:grid-cols-2 grid-cols-1 md:rounded-3xl rounded-xl">
-        <div className="bg-purple-700 rounded-l-3xl justify-center items-center hidden md:flex">
-          <Link to="/" className="text-6xl text-white font-bold">
-            TodoList
-          </Link>
-        </div>
-        <div className="py-15 px-10">
-          <h2 className="font-bold text-center text-4xl text-white">Login</h2>
-          <form className="mt-5" onSubmit={handleLogin}>
-            <div>
-              <label className="text-gray-300">Email</label>
-              <label className="input validator w-full mt-1">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="email@example.com"
-                  required
-                />
-              </label>
-            </div>
-            <div className="mt-3">
-              <label className="text-gray-300">Password</label>
-              <label className="input validator w-full mt-1">
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="password"
-                  required
-                  minLength={8}
-                />
-              </label>
-            </div>
-            <div className="mt-4">
-              {error && <p className="text-red-600">{error}</p>}
-            </div>
-            <div className="mt-4">
-              <button
-                type="submit"
-                className="text-white btn hover:bg-yellow-500 bg-yellow-400 w-full"
-              >
-                Login
-              </button>
-            </div>
-            <div className="mt-2">
-              <small className="text-gray-300">
-                Belum punya akun?{" "}
-                <Link
-                  to="/register"
-                  className="text-yellow-400 hover:text-yellow-500"
-                >
-                  Daftar sekarang
-                </Link>
-              </small>
-            </div>
-          </form>
-        </div>
+    <div className="min-h-screen bg-gradient-to-br from-purple-950 via-purple-900 to-gray-900 flex items-center justify-center px-6">
+      <div className="bg-gray-900 shadow-lg w-full max-w-md rounded-2xl p-10">
+        <h2 className="font-bold text-white text-center text-4xl mb-6">Login</h2>
+        <form onSubmit={handleLogin}>
+          <div className="mb-4">
+            <label className="block text-gray-300 mb-1">Email</label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="email@example.com"
+              required
+              className="w-full p-2 rounded bg-gray-800 text-white focus:outline-none"
+            />
+          </div>
+          <div className="mb-2">
+            <label className="block text-gray-300 mb-1">Password</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="password"
+              required
+              minLength={8}
+              className="w-full p-2 rounded bg-gray-800 text-white focus:outline-none"
+            />
+          </div>
+
+          {/* Spacer for error message */}
+          <div className="min-h-[1.5rem] mb-4">
+            {error && <p className="text-red-600">{error}</p>}
+          </div>
+
+          <button
+            type="submit"
+            className="w-full bg-yellow-400 hover:bg-green-500 text-white font-semibold py-3 rounded transition"
+          >
+            Login
+          </button>
+
+          <p className="mt-4 text-center text-sm text-gray-300">
+            Belum punya akun?{" "}
+            <Link to="/register" className="text-yellow-400 hover:text-yellow-500">
+              Register sekarang
+            </Link>
+          </p>
+        </form>
       </div>
     </div>
   );

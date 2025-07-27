@@ -5,7 +5,7 @@ function Contact() {
         <div className="grid xl:grid-cols-2 grid-cols-1 xl:space-x-20">
           <div className="mb-3 xl:mb-0">
             <img
-              src="/src/assets/top-view-arrangement-with-calendar-pencils.jpg"
+              src="/public/miko.png"
               data-aos="fade-up"
               className="rounded-md shadow-lg"
               alt=""
